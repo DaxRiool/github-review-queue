@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Review Queue",
+  "version": "0.1.0",
+  "description": "Adds a filter to GitHub pull request lists that shows only open, non-draft PRs that you have not reviewed and that are not approved.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "github-review-queue@daxriool.github.io",
+      "strict_min_version": "109.0"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/*"],
+      "js": ["src/core.js", "src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
